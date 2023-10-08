@@ -68,8 +68,13 @@ void *calSubStringThread(void *threadid) {
     tid = (long)threadid;
     int num = num_substring((int)tid);
     printf("This is thread %d, num of substring %s is %d\n", (int)tid, s2, num);
+
+    // Add a new line after printing
+    printf("\n");
+
     pthread_exit(NULL);
 }
+
 
 int main(int argc, char *argv[]) {
     pthread_t threads[NUM_THREADS];
