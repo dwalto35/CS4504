@@ -48,11 +48,5 @@ int main()
 
     printf("time: %ld", t2 - t1);
 
-    // Alternatively, you can use omp_get_wtime() to measure time
-    // double t1 = omp_get_wtime();
-    // matrixMulti();
-    // double t2 = omp_get_wtime();
-    // printf("parallel time: %3f\n", t2 - t1);
-
     return 0;
 }
