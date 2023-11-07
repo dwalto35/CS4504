@@ -56,14 +56,14 @@ int main()
     t1 = clock();
     matrixMulti(N1);
     t2 = clock();
-    printf("N = 1024, Sequential Time: %ld\n", t2 - t1);
+    printf("N = 1024, Sequential Time: %.6f\n", (double)(t2 - t1) / CLOCKS_PER_SEC);
     
     // Parallel execution
     matrixInit(N1);
     t1_omp = omp_get_wtime();
     matrixMulti(N1);
     t2_omp = omp_get_wtime();
-    printf("N = 1024, Parallel Time: %f\n", t2_omp - t1_omp);
+    printf("N = 1024, Parallel Time: %.6f\n", t2_omp - t1_omp);
     
     // Case N = 2048
     matrixInit(N2);
@@ -72,14 +72,14 @@ int main()
     t1 = clock();
     matrixMulti(N2);
     t2 = clock();
-    printf("N = 2048, Sequential Time: %ld\n", t2 - t1);
+    printf("N = 2048, Sequential Time: %.6f\n", (double)(t2 - t1) / CLOCKS_PER_SEC);
     
     // Parallel execution
     matrixInit(N2);
     t1_omp = omp_get_wtime();
     matrixMulti(N2);
     t2_omp = omp_get_wtime();
-    printf("N = 2048, Parallel Time: %f\n", t2_omp - t1_omp);
+    printf("N = 2048, Parallel Time: %.6f\n", t2_omp - t1_omp);
     
     // Case N = 4096
     matrixInit(N3);
@@ -88,14 +88,14 @@ int main()
     t1 = clock();
     matrixMulti(N3);
     t2 = clock();
-    printf("N = 4096, Sequential Time: %ld\n", t2 - t1);
+    printf("N = 4096, Sequential Time: %.6f\n", (double)(t2 - t1) / CLOCKS_PER_SEC);
     
     // Parallel execution
     matrixInit(N3);
     t1_omp = omp_get_wtime();
     matrixMulti(N3);
     t2_omp = omp_get_wtime();
-    printf("N = 4096, Parallel Time: %f\n", t2_omp - t1_omp);
+    printf("N = 4096, Parallel Time: %.6f\n", t2_omp - t1_omp);
 
     return 0;
 }
